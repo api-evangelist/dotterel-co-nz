@@ -1,0 +1,6 @@
+generated: '2026-10-24'
+method: probed
+generator: harvest-llms.py
+source: https://konos-sound.com/llms.txt
+bytes: 10588
+note: saved verbatim; the provider's own document

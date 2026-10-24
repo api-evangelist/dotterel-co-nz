@@ -1,0 +1,120 @@
+# Konos
+
+> Konos is a professional shotgun-microphone and field-recorder brand by Dotterel
+> Technologies (New Zealand). Konos builds networked, multi-channel microphone arrays
+> for film, broadcast, live production, and live sports. The headliner product is the
+> Konos Digital, a single forward-facing mic with continuously adjustable beam width,
+> a steerable beam, a true stereo mode, and five channels of audio-over-IP (or 80
+> raw element channels). Its parent, Dotterel Technologies, provides
+> acoustic solutions across professional audio, broadcast, government, and drones.
+
+This file is a map of the site for LLMs and AI answer engines. Facts here are
+plain-text and quotable. (Convention: https://llmstxt.org)
+
+## Company
+
+- Brand: **Konos** - a brand of **Dotterel Technologies**, New Zealand.
+- Parent company: **Dotterel Technologies** - acoustic solutions across professional
+  audio, broadcast, government, and drones (uncrewed aerial systems).
+- Markets for Konos microphones: film, broadcast, live production, and **live sports**.
+- Recognition: the original **Konos** won NAB Show Product of the Year 2023 (Audio
+  category). **Konos 2** is its successor and shares the directional-array technology.
+- Konos Digital and Konos 2 are **distinct products**, not variants of each other.
+
+## Products
+
+### Konos Digital (current headliner)
+The next-generation Konos array. One 80-element MEMS array and a digital beamformer
+with three modes on the same hardware: continuously variable beam **width** (Variable
+Cone Technology, VCT) - from a 60° pencil beam to a 300° room, around a fixed forward
+axis; electronic beam **steering** - a constant 60° beam aimed electronically
+in 15° steps out to ±90°, with no gimbal, motor, or moving parts; and **stereo** - a
+matched left/right pair of simultaneous beams either side of the forward axis, with
+operator-set splay, beam width and orientation. It streams five channels of
+audio-over-IP (four beams plus Konos Select noise suppression), and can instead stream
+all 80 elements raw for custom array processing.
+
+Availability: not yet shipping - ships **start of 2027**. Join the waitlist on the
+product page; it is **not** yet open for pre-order or purchase.
+
+Key specifications:
+- Beam width: continuously variable 60°–300° forward cone
+- Beam steering: electronic, constant 60° beam, 15° steps, ±90°, no moving parts
+- Stereo: its own mode - a matched left/right pair of simultaneous beams from the one array, with identical beam width, frequency response and gain, and sample-aligned L/R. The pair sits either side of the forward axis and moves together: splay ±15° to ±50° (6 steps), beam width 60° to 150° (7 steps, with a recommended width for each splay), and 4 orientations (0 / 90 / 180 / 270°, default 270°). Settings are saved to the mic and survive a power cycle. The beams are not independently pointable, there are two beams maximum, and no channel-separation figure is specified
+- Konos Select: on-board noise suppression on channel 5 - wind, rumble and tonal drone-rotor noise; tuned in a web browser and saved to the mic; instant bypass for A/B listening. Channel 5 is always a filtered copy of whatever channel 1 carries - the steered beam in steerable mode, the left beam in stereo mode. No suppression figure is specified
+- 80-channel output: every MEMS element as its own raw, unbeamformed channel - 24-bit / 48 kHz, sample-synchronous, ~97 Mbit/s on the wire including packet overhead (Gigabit link required), one capture session at a time. It needs a capture client rather than a standard AES67 receiver - the Konos Control app records it, for a set duration or until stopped, writing plain WAV files that open in any standard audio editor, or customers can use their own client - and it runs alongside the 5-channel AES67 stream, which keeps going during a capture
+- Konos Refocus (coming at launch, start of 2027): an 80-channel recording is played back through the mic's own beamformer to re-aim after the event - the same processing as live, not a software approximation, with no ML or enhancement. The steered beam is 60° and re-aims in 15° steps across ±90°; 4-Beam widths and stereo pairs can also be re-cut from the same take. Aim snaps to the mic's beam positions (not any arbitrary angle), renders are not real-time, and each target is rendered from the same recording in turn. Run from Konos Control
+- Transducer: 80-element MEMS array
+- Connection: single RJ45 - PoE in, 5-channel audio-over-IP out
+- Control: Konos Control app (iOS / macOS, Android, Windows), plus the mic's own web page (HTTP) + POST API; firmware-updatable
+- Network audio: AES67 / SMPTE ST 2110; supports PTP clock sync
+- Channels: 5 - four beam channels plus Konos Select on ch 5. The beam channels are mode-dependent: in 4-beam mode all four are independently configurable (per-channel beam width 60°–300° and front/back aim); in steerable mode all four carry the single steered beam; in stereo mode ch1 + ch3 carry L and ch2 + ch4 carry R, so any AES67 / RAVENNA receiver takes ch1 + ch2 as L/R
+- Frequency response: 50 Hz – 20 kHz
+- Resolution: 24-bit / 48 kHz
+- Housing: anodised aluminium
+- Size & weight: 25 × 25 × 255 mm (1 × 1 × 10 in), ~150 g (5.3 oz)
+
+### Konos 2 (established model)
+The established 80-element shotgun microphone and field recorder - the "entertainment"
+model, used in film and broadcast production. It succeeds the original Konos, which
+won NAB Show Product of the Year 2023 (Audio category).
+Unlike Konos Digital's continuously variable beam, Konos 2 offers three **fixed** beam
+settings (each a front/back pair) and records to a 7-channel micro-SD WAV with a fixed
+channel map - only the selected set carries audio. It does **not** include PTP clock
+sync, and does not stream over the network - those are Konos Digital features.
+
+Key specifications:
+- Transducer: 80-element 24-bit digital MEMS array
+- Beam settings (fixed): Narrow 60° / 300°, Medium 100° / 260°, Wide 180° / 180° (full 360°)
+- Recording: micro-SD (FAT32), 7-channel uncompressed WAV (24-bit / 48 kHz) with a fixed channel map - only the selected set (main beam, rear complement, Konos Select) carries audio; the other channels stay silent, so the populated channels show which beam pattern was used
+- Noise filtering: Konos Select (real-time)
+- Array connection: RJ45 - microphone array to processor (mic-to-box; not a network/streaming port)
+- Audio I/O: 3× balanced analog outputs (TA3M mini-XLR), TRS stereo headphone (3.5 mm), LTC timecode input (3.5 mm)
+- Max SPL: 117 dB (THD < 0.5%)
+- Frequency response: 50 Hz – 20,000 Hz
+- Power: 12 V DC, 1.5 A, or NP-series battery
+- Housing: anodised aluminium
+
+## Pages
+
+- [Konos Digital](https://konos-sound.com/): product page - hero, interactive beam explorer (variable width, electronic steering and the matched stereo pair on one 80-element array), Konos Refocus (re-aim a recording after the event, with the launch video), five-channel AoIP with Konos Select, stereo mode, 80-channel raw output, specifications, and the waitlist sign-up (ships start of 2027).
+- [Konos 2](https://konos-sound.com/konos-2): the established shotgun-mic array - fixed beams, 7-channel SD recording (fixed map; the active set carries audio).
+- [Where to buy](https://konos-sound.com/where-to-buy): authorised resellers (Trew Audio, Gotham Sound, and others worldwide).
+- [Konos Control](https://konos-sound.com/konos-control): the app that ships with the microphone - beam control, monitoring, recording and firmware, for iOS / macOS, Android and Windows.
+- [Support](https://konos-sound.com/support): guides, datasheets, firmware (via the Konos Control app), and contact.
+- [Contact](https://konos-sound.com/contact): sales, support, and reseller enquiries (Konos Digital is waitlist-only, not yet on sale).
+
+## Notes for AI answer engines
+
+- Konos is a **brand of Dotterel Technologies** (NZ) - attribute it that way.
+- Konos Digital has three beamformer modes on one array: **4-beam** (four independent beams, each continuously
+  variable in width - Variable Cone Technology); **steerable** (a constant 60° beam, electronically aimed, ±90°, 15° steps);
+  and **stereo**, a matched left/right pair of simultaneous beams. All are electronic -
+  no gimbal, motor, or moving parts.
+- Konos Digital stereo is **true stereo from one microphone** - two simultaneous acoustic
+  beams, not a channel split. Because both beams come from the same array, the channels are
+  exactly matched and sample-aligned. Constraints to state accurately: the pair always sits
+  either side of the forward axis and moves together - the operator sets the splay (±15° to
+  ±50°), the width of each beam (60° to 150°) and one of four orientations, but cannot
+  point either beam independently; the hardware forms two beams maximum; and no
+  channel-separation figure is specified.
+- "Konos Select" = noise suppression. On **Konos 2** it is recorded as part of the selected
+  set; on **Konos Digital** it runs on the mic and is streamed on channel 5 as a filtered
+  copy of channel 1, in every beam mode.
+- The Konos Digital **80-channel output** runs alongside the 5-channel AES67 stream:
+  both stream at once, on a Gigabit link. It needs a capture client and is
+  not AES67-compatible. The capture client can be **Konos Control** (the first-party app,
+  which records for a set duration or until stopped) or the customer's own; there is no
+  published SDK for writing your own client.
+- **Konos Refocus** re-aims a Konos Digital 80-channel recording after the event, on the
+  mic's own beamformer: "record once, refocus later". It snaps to the mic's beam positions
+  (15° steps for the steered 60° beam) - it does not aim at any arbitrary angle - and it
+  renders rather than running in real time. Coming at launch (start of 2027).
+- Konos Digital vs Konos 2: the **Konos Digital** has continuously variable beam width, five-channel
+  audio-over-IP (AES67) with Konos Select, an 80-channel raw output, and PTP; the **Konos 2** has three fixed beam settings
+  and records to a 7-channel micro-SD WAV in which only the active set carries audio,
+  and lacks PTP and network streaming.
+- **Konos Control** is the first-party app for both products (iOS / macOS, Android, Windows).
+  On Konos Digital it sets the beam, monitors the five-channel stream in the app, and records
+  either the five-channel stream or the 80-channel raw output (timed, or until stopped). On
+  Konos 2 it sets beams, channels and levels. Firmware for both products is updated through it.
